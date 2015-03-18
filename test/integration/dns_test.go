@@ -29,6 +29,7 @@ func TestDNS(t *testing.T) {
 			t.Logf("unexpected error: %v", err)
 			return
 		}
+		// t.Errorf("PIE: %s", in.Answer)
 		if len(in.Answer) != 1 {
 			t.Logf("unexpected answer: %#v", in)
 			return
@@ -53,6 +54,7 @@ func TestDNS(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
+	// t.Errorf("PIE: %s", in.Answer)
 	if len(in.Answer) != 1 {
 		t.Fatalf("unexpected response: %#v", in)
 	}
@@ -74,6 +76,7 @@ func TestDNS(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
+	t.Errorf("PIE: %s", in.Answer)
 	if len(in.Answer) == 0 {
 		t.Fatalf("unexpected response: %#v", in)
 	}
